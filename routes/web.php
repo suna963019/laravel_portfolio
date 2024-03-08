@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +15,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[BookController::class,'index']);
 
-Route::get('/index',[MainController::class,'index']);
+// Route::get('/rakuten','BookController@rakuten');
+
+
+// Route::get('/rakuten/add','BookController@rakutenAdd');
+// Route::post('/rakuten/add','BookController@rakutenCreate');
+
+Route::get('/book',[BookController::class,'index']);
+
+Route::get('/book/add',[BookController::class,'add']);
+Route::post('/book/add','BookController@create');
+
+Route::get('/book/edit','BookController@edit');
+Route::post('/book/edit','BookController@update');
+
+Route::get('/book/del','BookController@delete');
+Route::post('/book/del','BookController@remove');
+
+Route::get('/book/search','BookController@search');
