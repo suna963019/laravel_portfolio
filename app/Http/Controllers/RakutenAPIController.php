@@ -23,11 +23,11 @@ class RakutenAPIController extends Controller
         } catch (\Throwable $th) {
             $text = 'CONECTION_ERROR';
         }
-        return view('book.rakuten', ['items' => $text, 'count' => $count]);
+        return view('rakuten.index', ['items' => $text, 'count' => $count]);
     }
     public function rakutenAdd(Request $request)
     {
-        return view('book.rakutenAdd', ['item' => $request]);
+        return view('rakuten.add', ['item' => $request]);
     }
     public function rakutenCreate(Request $request)
     {
