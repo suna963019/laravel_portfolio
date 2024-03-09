@@ -26,12 +26,12 @@ Route::get('/',[BookController::class,'index']);
 Route::get('/book',[BookController::class,'index']);
 
 Route::get('/book/add',[BookController::class,'add']);
-Route::post('/book/add','BookController@create');
+Route::post('/book/add',[BookController::class,'create']);
 
-Route::get('/book/edit','BookController@edit');
-Route::post('/book/edit','BookController@update');
+Route::get('/book/edit',[BookController::class,'edit']);
+Route::post('/book/edit',[BookController::class,'update']);
 
-Route::get('/book/del','BookController@delete');
-Route::post('/book/del','BookController@remove');
+Route::get('/book/del',[BookController::class,'delete']);
+Route::post('/book/del',[BookController::class,'remove']);
 
-Route::get('/book/search','BookController@search');
+Route::get('/book/search',[BookController::class,'search']);
