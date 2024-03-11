@@ -5,7 +5,7 @@
 @section('menuber', '楽天ページ')
 
 @section('content')
-    <form action="/book/search" method="get">
+    <form action="/rakuten" method="get">
         <input type="text" name="keyword">
         <input type="submit" value="検索">
     </form>
