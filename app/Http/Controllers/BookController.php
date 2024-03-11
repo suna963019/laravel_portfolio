@@ -60,7 +60,7 @@ class BookController extends Controller
 
         $name = Book::where('name', 'like', '%' . $request->word . '%')->get();
         $author = Book::where('author', 'like', '%' . $request->word . '%')->where('name', 'not like', '%' . $request->word . '%')->get();
-        $items = array_merge($name,$author);
+        $items = array_merge_recursive($name,$author);
         return view('book.index', ['items' => $items]);
     }
 }
