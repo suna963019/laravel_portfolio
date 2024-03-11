@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class BlockBreaker extends Model
 {
     use HasFactory;
+    
+    protected $table = 'block_breaker';
 
     protected $guarded = array('id');
 

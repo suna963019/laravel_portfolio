@@ -9,6 +9,8 @@ class Slot extends Model
 {
     use HasFactory;
 
+    protected $table = 'slot';
+
     protected $guarded = array('id');
 
     public static $rules = array(
