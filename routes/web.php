@@ -31,7 +31,7 @@ Route::post('/book/del',[BookController::class,'remove']);
 Route::get('/book/search',[BookController::class,'search']);
 
 //楽天API用
-Route::get('/rakuten',[RakutenAPIController::class,'']);
+Route::get('/rakuten',[RakutenAPIController::class,'index']);
 
-Route::get('/rakuten/add',[RakutenAPIController::class,'']);
-Route::post('/rakuten/add',[RakutenAPIController::class,'']);
+Route::get('/rakuten/add',[RakutenAPIController::class,'add']);
+Route::post('/rakuten/add',[RakutenAPIController::class,'create']);

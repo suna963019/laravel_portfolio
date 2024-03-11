@@ -26,11 +26,11 @@ class RakutenAPIController extends Controller
         }
         return view('rakuten.index', ['items' => $text, 'count' => $count]);
     }
-    public function rakutenAdd(Request $request)
+    public function add(Request $request)
     {
         return view('rakuten.add', ['item' => $request]);
     }
-    public function rakutenCreate(Request $request)
+    public function create(Request $request)
     {
         $this->validate($request, Book::$rules);
         $books = new Book();
