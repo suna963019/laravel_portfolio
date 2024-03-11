@@ -17,7 +17,11 @@ class RakutenAPIController extends Controller
             if (!empty($request->page)) {
                 $count=$request->page;
             }
-            $crawler = $client->request('GET', 'https://app.rakuten.co.jp/services/api/BooksTotal/Search/20170404?format=json&keyword=java&booksGenreId=000&applicationId=1061760652970954311&hits=30&page=' . $count);
+            $keyword='';
+            if(!empty($request->keyword)){
+                $keyword=$request->keyword;
+            }
+            $crawler = $client->request('GET', 'https://app.rakuten.co.jp/services/api/BooksTotal/Search/20170404?format=json&keyword='.$keyword.'&booksGenreId=000&applicationId=1061760652970954311&hits=10&page=' . $count);
             $crawler = $crawler->getBody();
             $text = json_decode($crawler, true);
             $text = $text['Items'];

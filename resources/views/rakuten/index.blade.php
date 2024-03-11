@@ -5,10 +5,10 @@
 @section('menuber', '楽天ページ')
 
 @section('content')
-    {{-- <form action="/book/search" method="get">
-        <input type="text" name="word">
+    <form action="/book/search" method="get">
+        <input type="text" name="keyword">
         <input type="submit" value="検索">
-    </form> --}}
+    </form>
     <table>
         <tr>
             <th></th>
