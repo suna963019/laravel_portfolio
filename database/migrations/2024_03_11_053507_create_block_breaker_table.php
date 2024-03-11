@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blok_breaker', function (Blueprint $table) {
+        Schema::create('block_breaker', function (Blueprint $table) {
             $table->id();
             $table->integer('point');
             $table->timestamps();
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('blok_breaker');
+        Schema::dropIfExists('block_breaker');
     }
 };
