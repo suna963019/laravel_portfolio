@@ -42,18 +42,20 @@
             @endforeach
         @endforeach
     </table>
-    @if ($count > 1)
-        <form action="/rakuten" method="GET">
-            <input type="hidden" name="page" value="{{ $count - 1 }}">
-            <input type="submit" value="前">
-        </form>
-    @endif
-    @if ($count < 3)
-        <form action="/rakuten" method="GET">
-            <input type="hidden" name="page" value="{{ $count + 1 }}">
-            <input type="submit" value="次">
-        </form>
-    @endif
+    <div class="display-flex">
+        @if ($count > 1)
+            <form action="/rakuten" method="GET">
+                <input type="hidden" name="page" value="{{ $count - 1 }}">
+                <input type="submit" value="前">
+            </form>
+        @endif
+        @if ($count < 3)
+            <form action="/rakuten" method="GET">
+                <input type="hidden" name="page" value="{{ $count + 1 }}">
+                <input type="submit" value="次">
+            </form>
+        @endif
+    </div>
 @endsection
 
 @section('footer')

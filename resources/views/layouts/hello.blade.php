@@ -19,6 +19,9 @@
         form{
             margin: 0;
         }
+        .display-flex{
+            display: flex;
+        }
     </style>
 </head>
 
