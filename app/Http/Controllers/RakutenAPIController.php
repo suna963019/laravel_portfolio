@@ -11,11 +11,12 @@ class RakutenAPIController extends Controller
     public function index(Request $request)
     {
         $client = new Client();
-        if (empty($request->page)) {
-            $request->page = 1;
-        }
+        
         try {
-            $count = $request->page;
+            $count=1;
+            if (!empty($request->page)) {
+                $count=$request->page;
+            }
             $crawler = $client->request('GET', 'https://app.rakuten.co.jp/services/api/BooksTotal/Search/20170404?format=json&keyword=java&booksGenreId=000&applicationId=1061760652970954311&hits=30&page=' . $count);
             $crawler = $crawler->getBody();
             $text = json_decode($crawler, true);
