@@ -62,6 +62,7 @@ class BookController extends Controller
         $author = Book::where('author', 'like', '%' . $request->word . '%')->where('name', 'not like', '%' . $request->word . '%')->get();
         $is_empty_name = count($name) !== 0;
         $is_empty_author = count($name) !== 0;
+        dd($name, $is_empty_name, $author, $is_empty_author);
         $items = [];
         if ($is_empty_name && $is_empty_author) {
             $items = array_merge($name, $author);
