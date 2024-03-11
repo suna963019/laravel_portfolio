@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class BlockBreaker extends Model
 {
     use HasFactory;
+
+    protected $guarded = array('id');
+
+    public static $rules = array(
+        'name' => 'required',
+        'point' => 'required',
+    );
 }
