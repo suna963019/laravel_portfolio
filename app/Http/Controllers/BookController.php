@@ -61,10 +61,6 @@ class BookController extends Controller
         $name = Book::where('name', 'like', '%' . $request->word . '%')->get();
         $author = Book::where('author', 'like', '%' . $request->word . '%')->where('name', 'not like', '%' . $request->word . '%')->get();
         $items = [$name, $author];
-        return view('book.search', [
-            'check' => true,
-            'items' => $items,
-            'word' => $request->word,
-        ]);
+        return view('book.index', ['items' => $items]);
     }
 }
