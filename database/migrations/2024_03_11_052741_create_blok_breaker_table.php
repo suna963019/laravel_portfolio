@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blockbreaker_ranking', function (Blueprint $table) {
+        Schema::create('blok_breaker', function (Blueprint $table) {
             $table->id();
-            $table->integer('point');
             $table->timestamps();
         });
     }
@@ -23,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('blockbreaker_ranking');
+        Schema::dropIfExists('blok_breaker');
     }
 };
