@@ -29,7 +29,7 @@
 </head>
 
 <body>
-    <header class="display-flex">
+    <header>
         <h1>@yield('title')</h1>
         <h3>@yield('menuber')</h3>
     </header>
