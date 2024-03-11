@@ -65,10 +65,13 @@ class BookController extends Controller
         $items=[];
         if ($is_empty_name && $is_empty_author) {
             $items = array_merge($name, $author);
+            dd($items);
         } else if ($is_empty_author) {
             $items = $author;
+            dd($items);
         } else if ($is_empty_name) {
             $items = $name;
+            dd($items);
         }
 
         return view('book.index', ['items' => $items]);
