@@ -18,11 +18,10 @@
             <th></th>
         </tr>
         @php
-            $num = 30 * ($count - 1) + 1;
+            $num = 10 * ($count - 1) + 1;
         @endphp
         @foreach ($items as $array)
             @foreach ($array as $item)
-                {{-- {{dd($item)}} --}}
                 <form action="/rakuten/add" method="GET">
                     <input type="hidden" name="name" value="{{ $item['title'] }}">
                     <input type="hidden" name="author" value="{{ $item['author'] }}">
