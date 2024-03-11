@@ -6,23 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <style>
-        th{
+        body {
+            padding: 50px;
+        }
+
+        th {
             background-color: gray;
             color: white;
         }
-        table,th,td{
+
+        table,
+        th,
+        td {
             border: 1px solid black;
         }
-        input[name="send"]{
+
+        input[name="send"] {
             float: right;
         }
-        form{
+
+        form {
             margin: 0;
         }
-        .display-flex{
+
+        .display-flex {
             display: flex;
         }
-        .justify-content-center{
+
+        .justify-content-center {
             justify-content: center;
         }
     </style>
@@ -32,16 +43,14 @@
     <header>
         <h1>@yield('title')</h1>
         <h3>@yield('menuber')</h3>
+        <ul>
+            <li><a href="/book">表示ページ</a></li>
+            <li><a href="/book/add">追加ページ</a></li>
+            <li><a href="/rakuten">楽天APIページ</a></li>
+        </ul>
     </header>
-    <div class="display-flex justify-content-center">
-        <div class="content ">
-            <ul>
-                <li><a href="/book">表示ページ</a></li>
-                <li><a href="/book/add">追加ページ</a></li>
-                <li><a href="/rakuten">楽天APIページ</a></li>
-            </ul>
-            @yield('content')
-        </div>
+    <div class="content ">
+        @yield('content')
     </div>
     <div class="footer">
         @yield('footer')
