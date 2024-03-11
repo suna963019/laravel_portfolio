@@ -1,6 +1,6 @@
 @extends('layouts.hello')
 
-@section('title', 'edit')
+@section('title', 'book/edit')
 
 @section('menuber', '更新ページ')
 

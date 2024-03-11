@@ -1,6 +1,6 @@
 @extends('layouts.hello')
 
-@section('title', 'delete')
+@section('title', 'book/delete')
 
 @section('menuber','削除ページ')
 

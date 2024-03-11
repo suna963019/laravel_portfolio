@@ -1,6 +1,6 @@
 @extends('layouts.hello')
 
-@section('title', 'rakutenAdd')
+@section('title', 'rakuten/add')
 
 @section('menuber', '楽天追加ページ')
 
