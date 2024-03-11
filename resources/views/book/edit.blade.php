@@ -5,6 +5,7 @@
 @section('menuber', '更新ページ')
 
 @section('content')
+    <p>データを更新しますか？</p>
     <div>
         <ul>
             @foreach ($errors->all() as $item)
@@ -18,19 +19,19 @@
         <table>
             <tr>
                 <th>名前</th>
-                <td>{{ $item->name }}</td>
+                <td><input type="text" value="{{ $item->name }}"></td>
             </tr>
             <tr>
                 <th>著者</th>
-                <td>{{ $item->author}}</td>
+                <td><input type="text" value="{{ $item->author}}"></td>
             </tr>
             <tr>
                 <th>値段</th>
-                <td>{{ $item->price }}円</td>
+                <td><input type="num" value="{{ $item->price }}円"></td>
             </tr>
             <tr>
                 <th></th>
-                <td><input type="submit" value="追加"></td>
+                <td><input type="submit" value="更新"></td>
             </tr>
         </table>
     </form>

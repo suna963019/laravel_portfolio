@@ -5,6 +5,7 @@
 @section('menuber', '楽天ページ')
 
 @section('content')
+    <p>楽天APIを用いて本の検索とこのサイトに追加できます。</p>
     <form action="/rakuten" method="get">
         <input type="text" name="keyword">
         <input type="submit" value="検索">

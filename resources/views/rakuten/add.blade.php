@@ -5,6 +5,7 @@
 @section('menuber', '楽天追加ページ')
 
 @section('content')
+    <p>この本のデータを追加しますか？</p>
     <div>
         <ul>
             @foreach ($errors->all() as $item)

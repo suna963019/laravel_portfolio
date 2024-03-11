@@ -22,6 +22,9 @@
         .display-flex{
             display: flex;
         }
+        .justify-content-center{
+            justify-content: center;
+        }
     </style>
 </head>
 
@@ -35,8 +38,10 @@
             <li><a href="/rakuten">楽天APIページ</a></li>
         </ul>
     </header>
-    <div class="content">
-        @yield('content')
+    <div class="display-flex justify-content-center">
+        <div class="content ">
+            @yield('content')
+        </div>
     </div>
     <div class="footer">
         @yield('footer')

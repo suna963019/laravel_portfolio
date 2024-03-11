@@ -5,6 +5,7 @@
 @section('menuber', '追加ページ')
 
 @section('content')
+<p>この本を追加しますか？</p>
 <div>
     <ul>
         @foreach ($errors->all() as $item)

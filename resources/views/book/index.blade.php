@@ -5,6 +5,7 @@
 @section('menuber', '表示ページ')
 
 @section('content')
+    <p>データベースの本を検索、表示できます。</p>
     <form action="/book/search" method="get">
         <input type="text" name="word">
         <input type="submit" value="検索">
