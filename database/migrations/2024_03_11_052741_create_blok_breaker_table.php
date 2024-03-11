@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('blok_breaker', function (Blueprint $table) {
             $table->id();
+            $table->integer('point');
             $table->timestamps();
         });
     }
