@@ -60,7 +60,17 @@ class BookController extends Controller
 
         $name = Book::where('name', 'like', '%' . $request->word . '%')->get();
         $author = Book::where('author', 'like', '%' . $request->word . '%')->where('name', 'not like', '%' . $request->word . '%')->get();
-        $items = array_merge($name,$author);
+        $is_empty_name = emptyArray($name);
+        $is_empty_author = emptyArray($name);
+        $items=[];
+        if ($is_empty_name && $is_empty_author) {
+            $items = array_merge($name, $author);
+        } else if ($is_empty_author) {
+            $items = $name;
+        } else {
+            $items = $author;
+        }
+
         return view('book.index', ['items' => $items]);
     }
 }
