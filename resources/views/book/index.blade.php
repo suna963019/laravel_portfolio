@@ -1,6 +1,6 @@
-@extends('layouts.hello')
+@extends('layouts.page')
 
-@section('title', 'book/index')
+@section('title', '表示')
 
 @section('menuber', '表示ページ')
 
@@ -42,8 +42,4 @@
             </tr>
         @endforeach
     </table>
-@endsection
-
-@section('footer')
-
 @endsection

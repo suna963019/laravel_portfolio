@@ -1,6 +1,6 @@
-@extends('layouts.hello')
+@extends('layouts.page')
 
-@section('title', 'book/delete')
+@section('title', '削除')
 
 @section('menuber', '削除ページ')
 
@@ -32,8 +32,4 @@
             </tr>
         </table>
     </form>
-@endsection
-
-@section('footer')
-
 @endsection

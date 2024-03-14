@@ -1,6 +1,6 @@
-@extends('layouts.hello')
+@extends('layouts.page')
 
-@section('title', 'rakuten/index')
+@section('title', '楽天表示')
 
 @section('menuber', '楽天ページ')
 
@@ -42,22 +42,28 @@
             @endforeach
         @endforeach
     </table>
-    <div class="display-flex">
+    <div class="display-flex justify-content-center">
         @if ($count > 1)
             <form action="/rakuten" method="GET">
                 <input type="hidden" name="page" value="{{ $count - 1 }}">
-                <input type="submit" value="前">
+                <input type="submit" value="<" class="pager boder-circl">
             </form>
         @endif
-        @if ($count < 3)
+        @for ($page_upper = -2; $page_upper <= 2; $page_upper++)
+            @if ($page_upper == 0)
+                <p class="now-page-count boder-circl">{{ $count }}</p>
+            @elseif($count - $page_upper >= 1 && $count + $page_upper <= 10)
+                <form action="/rakuten" method="GET">
+                    <input type="hidden" name="page" value="{{ $count + $page_upper }}">
+                    <input type="submit" value="{{ $count + $page_upper }}" class="page-count boder-circl">
+                </form>
+            @endif
+        @endfor
+        @if ($count < 10)
             <form action="/rakuten" method="GET">
                 <input type="hidden" name="page" value="{{ $count + 1 }}">
-                <input type="submit" value="次">
+                <input type="submit" value=">" class="pager boder-circl">
             </form>
         @endif
     </div>
-@endsection
-
-@section('footer')
-
 @endsection

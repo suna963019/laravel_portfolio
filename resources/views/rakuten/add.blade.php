@@ -1,6 +1,6 @@
-@extends('layouts.hello')
+@extends('layouts.page')
 
-@section('title', 'rakuten/add')
+@section('title', '楽天追加')
 
 @section('menuber', '楽天追加ページ')
 
@@ -9,7 +9,13 @@
     <div>
         <ul>
             @foreach ($errors->all() as $item)
-                <li>{{ $item }}</li>
+                @if ($item === 'The name field is required.')
+                    <p>名前を入力してください。</p>
+                @elseif($item === 'The author field is required.')
+                    <p>作者を入力してください。</p>
+                @elseif($item === 'The price field is required.')
+                    <p>値段を入力してください。</p>
+                @endif
             @endforeach
         </ul>
     </div>
@@ -38,8 +44,4 @@
                 </tr>
             </table>
     </form>
-@endsection
-
-@section('footer')
-
 @endsection
