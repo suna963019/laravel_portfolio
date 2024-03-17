@@ -52,7 +52,7 @@
         @for ($page_upper = -2; $page_upper <= 2; $page_upper++)
             @if ($page_upper == 0)
                 <p class="now-page-count boder-circl">{{ $count }}</p>
-            @elseif($count - $page_upper >= 1 && $count + $page_upper <= 10)
+            @elseif($count + $page_upper >= 1 && $count + $page_upper <= 10)
                 <form action="/rakuten" method="GET">
                     <input type="hidden" name="page" value="{{ $count + $page_upper }}">
                     <input type="submit" value="{{ $count + $page_upper }}" class="page-count boder-circl">
