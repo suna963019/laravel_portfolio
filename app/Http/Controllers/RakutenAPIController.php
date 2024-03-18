@@ -18,17 +18,18 @@ class RakutenAPIController extends Controller
                 $count=$request->page;
             }
             $keyword='';
+            $searchword='';
             if(!empty($request->keyword)){
                 $keyword=$request->keyword;
                 $searchword='&keyword='.$keyword;
             }
-            $items=["no data"];
             $crawler = $client->request('GET', 'https://app.rakuten.co.jp/services/api/BooksTotal/Search/20170404?format=json'.$searchword.'&booksGenreId=000&applicationId=1061760652970954311&hits=10&page=' . $count);
             $crawler = $crawler->getBody();
             $text = json_decode($crawler, true);
             $items = $text['Items'];
         } catch (\Throwable $th) {
-            $text = 'CONECTION_ERROR';
+            dd($searchword);
+            $items = 'CONECTION_ERROR';
         }
         // dd($text);
         return view('rakuten.index', ['items' => $items, 'count' => $count, 'keyword'=>$keyword]);
