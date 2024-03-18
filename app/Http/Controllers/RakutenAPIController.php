@@ -28,10 +28,8 @@ class RakutenAPIController extends Controller
             $text = json_decode($crawler, true);
             $items = $text['Items'];
         } catch (\Throwable $th) {
-            dd($searchword);
             $items = 'CONECTION_ERROR';
         }
-        // dd($text);
         return view('rakuten.index', ['items' => $items, 'count' => $count, 'keyword'=>$keyword]);
     }
     public function add(Request $request)
