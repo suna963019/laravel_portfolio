@@ -7,12 +7,12 @@
 @section('content')
     <p>楽天APIを用いて本の検索とこのサイトに追加できます。</p>
     <form action="/rakuten" method="get">
-        <input type="text" name="keyword">
+        <input type="text" name="keyword" value="{{$keyword}}">
         <input type="submit" value="検索">
     </form>
     <table>
         <tr>
-            <th></th>
+            <th>No.</th>
             <th>名前</th>
             <th>著者</th>
             <th>値段</th>
@@ -45,7 +45,13 @@
     <div class="display-flex justify-content-center">
         @if ($count > 1)
             <form action="/rakuten" method="GET">
+                <input type="hidden" name="page" value="1">
+                <input type="hidden" name="keyword" value="{{$keyword}}">
+                <input type="submit" value="≪" class="pager boder-circl">
+            </form>
+            <form action="/rakuten" method="GET">
                 <input type="hidden" name="page" value="{{ $count - 1 }}">
+                <input type="hidden" name="keyword" value="{{$keyword}}">
                 <input type="submit" value="<" class="pager boder-circl">
             </form>
         @endif
@@ -55,6 +61,7 @@
             @elseif($count + $page_upper >= 1 && $count + $page_upper <= 10)
                 <form action="/rakuten" method="GET">
                     <input type="hidden" name="page" value="{{ $count + $page_upper }}">
+                    <input type="hidden" name="keyword" value="{{$keyword}}">
                     <input type="submit" value="{{ $count + $page_upper }}" class="page-count boder-circl">
                 </form>
             @endif
@@ -62,7 +69,13 @@
         @if ($count < 10)
             <form action="/rakuten" method="GET">
                 <input type="hidden" name="page" value="{{ $count + 1 }}">
+                <input type="hidden" name="keyword" value="{{$keyword}}">
                 <input type="submit" value=">" class="pager boder-circl">
+            </form>
+            <form action="/rakuten" method="GET">
+                <input type="hidden" name="page" value="10">
+                <input type="hidden" name="keyword" value="{{$keyword}}">
+                <input type="submit" value="≫" class="pager boder-circl">
             </form>
         @endif
     </div>

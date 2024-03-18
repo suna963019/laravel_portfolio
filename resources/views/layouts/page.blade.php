@@ -91,7 +91,7 @@
         .boder-circl{
             height: 30px;
             width: 30px;
-            border: 1px solid coral;
+            border: 2px solid coral;
             border-radius: 30px;
         }
         .page-count{
@@ -112,7 +112,7 @@
             background-color:transparent;
             font-size: 30px;
             margin:0 10px;
-            line-height: 30px;
+            line-height: 25px;
         }
     </style>
     @yield('style')
@@ -143,7 +143,7 @@
         </div>
         <footer>
             <div id="header-link-list">
-                <a href="/book/index">
+                <a href="/book">
                     <p>表示</p>
                 </a>
                 <a href="/book/add">

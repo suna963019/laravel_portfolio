@@ -19,16 +19,18 @@ class RakutenAPIController extends Controller
             }
             $keyword='';
             if(!empty($request->keyword)){
-                $keyword='&keyword='.$request->keyword;
+                $keyword=$request->keyword;
+                $searchword='&keyword='.$keyword;
             }
-            $crawler = $client->request('GET', 'https://app.rakuten.co.jp/services/api/BooksTotal/Search/20170404?format=json'.$keyword.'&booksGenreId=000&applicationId=1061760652970954311&hits=10&page=' . $count);
+            $crawler = $client->request('GET', 'https://app.rakuten.co.jp/services/api/BooksTotal/Search/20170404?format=json'.$searchword.'&booksGenreId=000&applicationId=1061760652970954311&hits=10&page=' . $count);
             $crawler = $crawler->getBody();
             $text = json_decode($crawler, true);
-            $text = $text['Items'];
+            $items = $text['Items'];
         } catch (\Throwable $th) {
             $text = 'CONECTION_ERROR';
         }
-        return view('rakuten.index', ['items' => $text, 'count' => $count]);
+        // dd($text);
+        return view('rakuten.index', ['items' => $items, 'count' => $count, 'keyword'=>$keyword]);
     }
     public function add(Request $request)
     {
